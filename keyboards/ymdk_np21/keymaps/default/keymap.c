@@ -33,8 +33,11 @@ enum custom_keycodes {
   FindUsages,
   GoToImplementation,
   GoToDeclaration,
-  Hierarchy
-  
+  Hierarchy,
+  RunAllTestsInCurrentClass,
+  RunAllTestsInSolution
+  //Run all tests in current class Ctrl G Ctrl X chord (via testcop)
+  //Run all tests in solution Ctrl T ,L chord
   
 };
 
@@ -57,7 +60,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 	
     TestCop, SearchType, _______, _______,
     CleanupCodeFile, _______, _______, _______,
-    _______, _______, _______, _______,
+    RunAllTestsInCurrentClass, RunAllTestsInSolution, _______, _______,
     FindUsages, GoToImplementation, GoToDeclaration , Hierarchy,
     Refactor, ExtractVariable, _______, _______
   ),
@@ -145,6 +148,15 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
 		case SHORTCUT5:
 			SEND_STRING(SS_RWIN("5"));
 			break;
+		case SHORTCUT6:
+			SEND_STRING(SS_RWIN("6"));
+			break;
+		case SHORTCUT7:
+			SEND_STRING(SS_RWIN("7"));
+			break;
+		case SHORTCUT8:
+			SEND_STRING(SS_RWIN("8"));
+			break;
 		case TestCop:
 			SEND_STRING(SS_LCTL("gt"));		
 			break;
@@ -171,6 +183,12 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
 			break;
 		case Hierarchy:
 			SEND_STRING(SS_DOWN(X_LCTRL)SS_DOWN(X_LALT)SS_TAP(X_H)SS_UP(X_LALT)SS_UP(X_LCTRL));		
+			break;
+		case RunAllTestsInCurrentClass:
+			SEND_STRING(SS_LCTL("gx"));		
+			break;
+		case RunAllTestsInSolution:
+			SEND_STRING(SS_LCTL("t")"l");		
 			break;
 	}
   return true;
