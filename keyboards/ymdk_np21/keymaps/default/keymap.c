@@ -25,7 +25,6 @@ enum custom_keycodes {
   
   //R# shortcuts
   TestCop,
-  SearchType,
   CleanupCodeFile,
   Refactor,
   ExtractVariable,
@@ -35,34 +34,35 @@ enum custom_keycodes {
   GoToDeclaration,
   Hierarchy,
   RunAllTestsInCurrentClass,
-  RunAllTestsInSolution
-  //Run all tests in current class Ctrl G Ctrl X chord (via testcop)
-  //Run all tests in solution Ctrl T ,L chord
+  RunAllTestsInSolution,
+  
+  BuildSolution,
+  CleanSolution
   
 };
 
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   
-  //Shortcut layer
+	//R# Layer
   [_LAYER_0] = LAYOUT_ortho_6x4(
     GOTO_LAYER_1, _______, _______, _______,
+	
+    TestCop, _______, CleanSolution, BuildSolution,
+    CleanupCodeFile, _______, _______, _______,
+    RunAllTestsInCurrentClass, RunAllTestsInSolution, _______, _______,
+    FindUsages, GoToImplementation, GoToDeclaration , Hierarchy,
+    Refactor, ExtractVariable, _______, _______
+  ),
+  
+	//Shortcut layer
+  [_LAYER_1] = LAYOUT_ortho_6x4(
+    GOTO_LAYER_2, _______, _______, _______,
 	
     SHORTCUT1, SHORTCUT2, SHORTCUT3, SHORTCUT4,
     SHORTCUT5, SHORTCUT6, SHORTCUT7, SHORTCUT8,	
     _______, _______, _______, _______,
     LCTL(KC_Z), LCTL(KC_Y), _______, _______,
     LCTL(KC_C), LCTL(KC_X), LCTL(KC_V), _______
-  ),
-
-	//R# Layer
-  [_LAYER_1] = LAYOUT_ortho_6x4(
-    GOTO_LAYER_2, _______, _______, _______,
-	
-    TestCop, SearchType, _______, _______,
-    CleanupCodeFile, _______, _______, _______,
-    RunAllTestsInCurrentClass, RunAllTestsInSolution, _______, _______,
-    FindUsages, GoToImplementation, GoToDeclaration , Hierarchy,
-    Refactor, ExtractVariable, _______, _______
   ),
 
   [_LAYER_2] = LAYOUT_ortho_6x4(
@@ -160,9 +160,6 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
 		case TestCop:
 			SEND_STRING(SS_LCTL("gt"));		
 			break;
-		case SearchType:
-			SEND_STRING(SS_LCTL("n"));		
-			break;
 		case CleanupCodeFile:
 			SEND_STRING(SS_DOWN(X_LCTRL)SS_DOWN(X_LALT)SS_TAP(X_F)SS_UP(X_LALT)SS_UP(X_LCTRL)SS_TAP(X_ENTER));		
 			break;
@@ -189,6 +186,12 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
 			break;
 		case RunAllTestsInSolution:
 			SEND_STRING(SS_LCTL("t")"l");		
+			break;
+		case CleanSolution:
+			SEND_STRING(SS_DOWN(X_LSHIFT)SS_DOWN(X_LALT)SS_TAP(X_B)SS_UP(X_LALT)SS_UP(X_LSHIFT));		
+			break;
+		case BuildSolution:
+			SEND_STRING(SS_DOWN(X_LCTRL)SS_DOWN(X_LSHIFT)SS_TAP(X_B)SS_UP(X_LSHIFT)SS_UP(X_LCTRL));		
 			break;
 	}
   return true;
