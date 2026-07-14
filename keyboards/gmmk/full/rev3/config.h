@@ -1,5 +1,5 @@
 /*
- * Copyright 2025 ExoticPubis
+ * Copyright 2026
  *
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -17,23 +17,12 @@
 
 #pragma once
 
+#define SN32F2XX_RGB_MATRIX_ROW_PINS { C1, C2, A0, A1, A2, A3, A6, A7, A8, A9, A10, A11, A12, A13, A14, A15 }
+
+//Copied over from reference, I'm unsure about these
 #define MATRIX_UNSELECT_DRIVE_HIGH
-
 #define RGB_MATRIX_LED_COUNT 104
-#define SN32F2XX_RGB_MATRIX_ROW_PINS { C0, C1, C3, C4, C5, C6, C7, C8, C9, C10, C11, C12, B6, B7, B8, B9, B10, B11 }
-
 #define RGB_MATRIX_TYPING_HEATMAP_DECREASE_DELAY_MS 50
-
 #define SN32F2XX_PWM_OUTPUT_ACTIVE_LEVEL SN32F2XX_PWM_OUTPUT_ACTIVE_HIGH
 #define SN32F2XX_RGB_OUTPUT_ACTIVE_LEVEL SN32F2XX_RGB_OUTPUT_ACTIVE_LOW
 
-/* Color correction
- * Need to manually adjust the output of the green and red channel...
- * If not set, the colors are wrong depending of the output from each color channel.
- * While looking at the PCB, I found out why... There is only a single 62 ohms resistor
- * for the R, G, and B channel for each key. Because of their different voltage drop, they
- * they wont draw power equally, resulting in the output being wrong if they are all set to 100%.
- */
-
-#define SN32F2XX_LED_OUTPUT_LUMINOSITY_R 0.25
-#define SN32F2XX_LED_OUTPUT_LUMINOSITY_G 0.6

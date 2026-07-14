@@ -1,14 +1,20 @@
-# Redragon K551RGB MITRA
+# GMMK Full Mechanical Keyboard
 
-[K551RGB](https://imgur.com/a/WeNJ6gF)
+[GMMK Full Mechanical Keyboard](https://www.gloriousgaming.com/en-es/pages/guide-gmmk1-fullsize)
 
-* Keyboard Maintainer: [Samuel Lafontaine](https://github.com/exoticpubis)
-* Based on K556 by: [Adam Honse](https://github.com/CalcProgrammer1)
-* Hardware Supported: SN32F248BF
+* Keyboard Maintainer: [N/A](N/A)
+* Based on K556 by: [N/A](N/A)
+* Hardware Supported: SN32F268
+* Revisions
+* rev1: IS31FL3731    , NOT SUPPORTED, red led color only
+* rev2: VS12L03A (I2C), SN before SNSS12116xxxxx
+* rev3: VS12L17A (SPI), SN equal or after SNSS12116xxxxx
+
+Only the rev3 ISO keymap code has been ported from sn32_master.
 
 Make example for this keyboard (after setting up your build environment):
 
-    qmk compile -kb redragon/k551 -km default
+    qmk compile -kb gmmk/full/rev3 -km iso
 
 For flashing this keyboard:
 
