@@ -18,7 +18,7 @@
 #pragma once
 
 ////I think this might be wrong, I can't find the right values
-#define SN32F2XX_RGB_MATRIX_ROW_PINS { D0, D1, D2, D3, D4, D5, D6, }
+#define SN32F2XX_RGB_MATRIX_ROW_PINS { }
 //#define SN32F2XX_RGB_MATRIX_COL_PINS { C1, C2, A0, A1, A2, A3, A6, A7, A8, A9, A10, A11, A12, A13, A14, A15 }
 //
 ////Copied over from reference, I'm unsure about these
