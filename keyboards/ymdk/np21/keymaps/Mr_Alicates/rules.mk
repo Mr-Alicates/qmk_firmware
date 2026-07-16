@@ -1,0 +1,2 @@
+BACKLIGHT_DRIVER = software
+MOUSEKEY_ENABLE = yes
