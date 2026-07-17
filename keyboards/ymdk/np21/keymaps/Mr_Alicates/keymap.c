@@ -18,8 +18,8 @@
 
 enum layer_names {
     _BASE,
-    _MOUSE,
     _CURSOR,
+    _MOUSE,
     _LIGHTS
 };
 
@@ -42,30 +42,30 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 //First row is right column
 
     [_BASE] = LAYOUT_ortho_4x6(
-        KC_NO,               KC_NO,              KC_NO,               KC_NO,        KC_NO,     DF(_LIGHTS),
-        HTTP_1,              HTTP_2,             HTTP_3,              HTTP_4,       HTTP_5,    DF(_CURSOR),
-        GOOGLE_MEET_MUTE,    GOOGLE_MEET_CAM,    GOOGLE_MEET_HAND,    KC_F11,       KC_NO,     DF(_MOUSE),
+        HTTP_1,              HTTP_2,             HTTP_3,              HTTP_4,       HTTP_5,    DF(_LIGHTS),
+        KC_NO,               KC_NO,              KC_NO,               KC_NO,        KC_NO,     DF(_MOUSE),
+        GOOGLE_MEET_MUTE,    GOOGLE_MEET_CAM,    GOOGLE_MEET_HAND,    KC_F11,       KC_NO,     DF(_CURSOR),
         BUILD,               CLEAN,              KC_NO,               KC_NO,        KC_NO,     DF(_BASE)
     ),
 
     [_MOUSE] = LAYOUT_ortho_4x6(
         MS_BTN1,             MS_UP  ,            MS_BTN2,             MS_WHLU,      KC_NO,     DF(_LIGHTS),
-        MS_LEFT,             MS_DOWN,            MS_RGHT,             MS_BTN3,      KC_NO,     DF(_CURSOR),
-        KC_NO,               KC_NO,              KC_NO,               MS_WHLD,      KC_NO,     DF(_MOUSE),
+        MS_LEFT,             MS_DOWN,            MS_RGHT,             MS_BTN3,      KC_NO,     DF(_MOUSE),
+        KC_NO,               KC_NO,              KC_NO,               MS_WHLD,      KC_NO,     DF(_CURSOR),
         KC_NO,               KC_NO,              KC_NO,               KC_NO,        KC_NO,     DF(_BASE)
     ),
 
     [_CURSOR] = LAYOUT_ortho_4x6(
-        KC_NO,               KC_UP,              KC_NO,               KC_PGUP,      KC_NO,     DF(_LIGHTS),
-        KC_LEFT,             KC_DOWN,            KC_RGHT,             KC_NO,        KC_NO,     DF(_CURSOR),
-        KC_NO,               KC_NO,              KC_NO,               KC_PGDN,      KC_NO,     DF(_MOUSE),
-        KC_NO,               KC_NO,              KC_NO,               KC_NO,        KC_NO,     DF(_BASE)
+        KC_ENT,              KC_UP,              KC_BACKSPACE,        KC_PGUP,      KC_DEL,    DF(_LIGHTS),
+        KC_LEFT,             KC_DOWN,            KC_RGHT,             KC_NO,        KC_NO,     DF(_MOUSE),
+        KC_NO,               KC_NO,              KC_NO,               KC_PGDN,      KC_NO,     DF(_CURSOR),
+        KC_NO,               KC_NO,              KC_NO,               KC_SPACE,     KC_NO,     DF(_BASE)
     ),
 
     [_LIGHTS] = LAYOUT_ortho_4x6(
         BL_ON,               KC_NO,              BL_OFF,              BL_UP  ,      KC_NO,     DF(_LIGHTS),
-        KC_NO,               KC_NO,              KC_NO,               KC_NO,        KC_NO,     DF(_CURSOR),
-        KC_NO,               KC_NO,              KC_NO,               BL_DOWN,      KC_NO,     DF(_MOUSE),
+        KC_NO,               KC_NO,              KC_NO,               KC_NO,        KC_NO,     DF(_MOUSE),
+        KC_NO,               KC_NO,              KC_NO,               BL_DOWN,      KC_NO,     DF(_CURSOR),
         QK_BOOTLOADER,       KC_NO,              KC_NO,               KC_NO,        KC_NO,     DF(_BASE)
     )
 };
