@@ -14,13 +14,8 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-#include "http_strings.h"
-
-#pragma once
-
-#undef LED_NUM_LOCK_PIN
-
-#undef BACKLIGHT_BREATHING
-#undef BACKLIGHT_PIN
-
-#define BACKLIGHT_PINS { D0, D4 }
+#define HTTP_1_STR ""
+#define HTTP_2_STR ""
+#define HTTP_3_STR ""
+#define HTTP_4_STR ""
+#define HTTP_5_STR ""
