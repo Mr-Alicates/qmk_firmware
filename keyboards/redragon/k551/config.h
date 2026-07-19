@@ -16,6 +16,7 @@
  */
 
 #pragma once
+#define DYNAMIC_KEYMAP_LAYER_COUNT 3
 
 #define MATRIX_UNSELECT_DRIVE_HIGH
 
