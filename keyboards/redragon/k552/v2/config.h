@@ -23,3 +23,11 @@
 #define MATRIX_UNSELECT_DRIVE_HIGH
 
 #define RGB_MATRIX_TYPING_HEATMAP_DECREASE_DELAY_MS 50
+
+/* Color correction
+ * Need to manually adjust the output of the green and red channel...
+ * If not set, the colors are wrong depending of the output from each color channel.
+ * Copied this over from K551. Did this because I flashed it and only got red leds.
+ */
+#define SN32F2XX_LED_OUTPUT_LUMINOSITY_R 0.25
+#define SN32F2XX_LED_OUTPUT_LUMINOSITY_G 0.6
